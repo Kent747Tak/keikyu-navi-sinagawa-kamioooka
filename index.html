@@ -58,9 +58,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku
 .b-ウィング{background:var(--purple-light);color:var(--purple)}
 .b-普通{background:var(--gray-light);color:var(--gray)}
 
-.dest-col{flex:1;display:flex;flex-direction:column;gap:3px}
+.dest-col{flex:1;display:flex;align-items:center;gap:8px}
 .dest{font-size:16px;color:var(--text)}
-.first-badge{font-size:10px;font-weight:600;padding:1px 7px;border-radius:4px;background:var(--green-light);color:var(--green);align-self:flex-start}
+.first-badge{font-size:12px;font-weight:600;padding:3px 9px;border-radius:5px;background:var(--green-light);color:var(--green);white-space:nowrap;flex-shrink:0}
 
 .msg{padding:2.5rem;text-align:center;color:var(--muted);font-size:14px;line-height:1.7}
 
@@ -122,7 +122,7 @@ function badgeClass(t){
   return {'快特':'b-快特','エアポート快特':'b-エアポート快特','特急':'b-特急','急行':'b-急行','ウィング':'b-ウィング'}[t] || 'b-普通';
 }
 
-function getUpcoming(now, count=5){
+function getUpcoming(now, count=8){
   const key = dayKey(now);
   const src = dir==='down' ? TT_DOWN : TT_UP;
   const trains = src[key] || [];
